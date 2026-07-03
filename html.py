@@ -1,0 +1,117 @@
+Python 3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)] on win32
+Enter "help" below or click "Help" above for more information.
+>>> html = """<!doctype html>
+... <html lang="en">
+... <head>
+...   <meta charset="utf-8" />
+...   <meta name="viewport" content="width=device-width, initial-scale=1" />
+...   <title>Harsh's Edu.Sphere</title>
+...   <style>
+...     :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--text:#e5e7eb;--accent:#38bdf8;--accent2:#22c55e;--border:#1f2937}
+...     *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#020617,#0f172a);color:var(--text)}
+...     header{padding:48px 20px;text-align:center}
+...     h1{margin:0 0 10px;font-size:clamp(2rem,5vw,3.5rem)}
+...     p{color:var(--muted);line-height:1.6}
+...     .wrap{max-width:1100px;margin:0 auto;padding:0 20px 48px}
+...     .hero{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:center}
+...     .badge{display:inline-block;padding:8px 12px;border:1px solid #2563eb;border-radius:999px;color:#bfdbfe;background:rgba(37,99,235,.12);font-size:.9rem}
+...     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+...     .card{background:rgba(17,24,39,.9);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+...     .card h2{margin:0 0 8px;font-size:1.15rem}
+...     .card a{display:inline-block;margin-top:10px;color:#06121f;background:var(--accent);text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700}
+...     .card a.alt{background:var(--accent2)}
+...     .search{margin-top:24px;background:rgba(255,255,255,.04);border:1px solid var(--border);padding:14px;border-radius:16px}
+...     input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid #334155;background:#0b1220;color:var(--text);font-size:1rem}
+...     .note{margin-top:16px;font-size:.95rem;color:var(--muted)}
+...     footer{padding:24px 20px 40px;text-align:center;color:var(--muted)}
+...     .tagrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+...     .tag{padding:6px 10px;border-radius:999px;border:1px solid #334155;background:#0b1220;color:#cbd5e1;font-size:.85rem}
+...   </style>
+... </head>
+... <body>
+...   <header>
+...     <div class="wrap hero">
+...       <div>
+...         <span class="badge">Free Educational Resources</span>
+...         <h1>Harsh's Edu.Sphere</h1>
+...         <p>A simple learning hub for NCERT books from Class 9 to 12, JEE, UPSC, and more. Find educational videos, PDFs, and study material in one place.</p>
+...         <div class="tagrow">
+...           <span class="tag">NCERT 9–12</span>
+...           <span class="tag">JEE</span>
+...           <span class="tag">UPSC</span>
+...           <span class="tag">Videos</span>
+...           <span class="tag">PDFs</span>
+...         </div>
+...       </div>
+...       <div class="card">
+...         <h2>Start Learning</h2>
+        <p>Choose a section below to open curated resources. You can later add your own links, playlists, and book collections.</p>
+        <a href="#resources">Explore Resources</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="search card">
+      <h2>Search your topic</h2>
+      <input id="search" type="text" placeholder="Try: Class 10 Science, JEE Physics, UPSC Polity" oninput="filterCards()" />
+      <p class="note">This is a simple demo search for the cards below. You can expand it later with a real database or file library.</p>
+    </section>
+
+    <section id="resources" class="grid">
+      <article class="card item">
+        <h2>Class 9–10 NCERT</h2>
+        <p>Basic foundation books, chapter-wise videos, and PDF notes for Maths, Science, English, and Social Science.</p>
+        <a href="https://ncert.nic.in/textbook.php" target="_blank" rel="noreferrer">Open NCERT Books</a>
+      </article>
+      <article class="card item">
+        <h2>Class 11–12 NCERT</h2>
+        <p>Concept-building material for Physics, Chemistry, Biology, Maths, Accountancy, Economics, and more.</p>
+        <a class="alt" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noreferrer">View Books</a>
+      </article>
+      <article class="card item">
+        <h2>JEE Preparation</h2>
+        <p>Problem-solving videos, formula sheets, and practice PDFs for Physics, Chemistry, and Mathematics.</p>
+        <a href="https://jeemain.nta.nic.in/" target="_blank" rel="noreferrer">JEE Official Site</a>
+      </article>
+      <article class="card item">
+        <h2>UPSC Preparation</h2>
+        <p>NCERT basics, polity, history, geography, economy, current affairs, and exam strategy resources.</p>
+        <a class="alt" href="https://upsc.gov.in/" target="_blank" rel="noreferrer">UPSC Official Site</a>
+      </article>
+      <article class="card item">
+        <h2>Video Lessons</h2>
+        <p>Short and clear educational videos for revision, problem solving, and concept understanding.</p>
+        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">Open YouTube</a>
+      </article>
+      <article class="card item">
+        <h2>PDF Library</h2>
+        <p>Study notes, chapter summaries, solved examples, and printable worksheets in PDF format.</p>
+        <a class="alt" href="#">Add PDFs Later</a>
+      </article>
+    </section>
+
+    <section class="card" style="margin-top:16px">
+      <h2>About Harsh's Edu.Sphere</h2>
+      <p>This website is designed to stay simple, fast, and easy to use on mobile and desktop. It can grow into a full learning platform with subject filters, book uploads, playlists, and category pages.</p>
+    </section>
+  </main>
+
+  <footer>
+    Made for students learning NCERT, JEE, and UPSC.
+  </footer>
+
+  <script>
+    function filterCards(){
+      const q = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.item').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
+"""
+
+Path("index.html").write_text(html, encoding="utf-8")
